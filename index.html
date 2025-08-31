@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f6fa;
+      color: #333;
+    }
+    header {
+      background: #4b6cb7;
+      background: linear-gradient(135deg, #182848, #4b6cb7);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffd369;
+    }
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #182848;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #182848;
+      color: white;
+      margin-top: 20px;
+    }
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Creative Portfolio</h1>
+    <nav>
+      <a href="#writing">Writing</a>
+      <a href="#design">Design</a>
+      <a href="#dance">Dance</a>
+    </nav>
+  </header>
+
+  <section id="writing">
+    <h2>✍️ Writing</h2>
+    <div class="card">
+      <p>I love expressing thoughts through stories, poems, and articles. My writing focuses on creativity, emotions, and storytelling that connects with people.</p>
+    </div>
+  </section>
+
+  <section id="design">
+    <h2>🎨 Design</h2>
+    <div class="card">
+      <p>Design is about turning imagination into visuals. I create posters, logos, and digital art that reflect minimalism and creativity.</p>
+    </div>
+  </section>
+
+  <section id="dance">
+    <h2>💃 Dance</h2>
+    <div class="card">
+      <p>Dance is my way of storytelling through movement. From classical to freestyle, it helps me stay active and express myself with rhythm.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 My Creative Portfolio | Designed with ❤️</p>
+  </footer>
+
+  <script>
+    // Small JS effect: Highlight active menu link
+    const navLinks = document.querySelectorAll("nav a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      document.querySelectorAll("section").forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 60) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.style.color = (link.getAttribute("href") === "#" + current) ? "#ffd369" : "white";
+      });
+    });
+  </script>
+</body>
+</html>
